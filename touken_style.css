@@ -1,0 +1,55 @@
+﻿hr.border {
+	color: #6391A6;
+	height: 3px;
+	border: 0 none; 
+    background-color: #6391A6;
+}
+
+p {
+	font-size:xx-small;
+	margin:0;
+}
+
+p.collapsible {
+	font-size:medium;
+}
+
+div.toukenResult {
+	display:inline-block;
+	margin:0px 12px 12px 0px;
+}
+
+div.toukenResultList {
+	text-align:center;
+}
+
+div.noncollect {
+	filter: alpha(opacity=25);
+	-moz-opacity:0.25;
+	opacity:0.25;
+}
+
+div.unimpl {
+	filter: alpha(opacity=50);
+	-moz-opacity:0.50;
+	opacity:0.50;
+}
+
+div.menu{
+	display:inline-block;
+	width:20%;
+	min-width:200px;
+	max-width:500px;
+	margin-top:10px;
+}
+
+::selection    {
+    background: #9B8884;
+    color:#fff;
+}
+ 
+/*Firefoxに対応*/
+::-moz-selection     {
+    background: #9B8884;
+    color:#fff;
+}
