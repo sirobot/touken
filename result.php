@@ -47,7 +47,7 @@
 				<h1>刀剣男士所有一覧</h1>
 			</div>
 			<div data-role="content">
-				<div data-role="collapsible" data-collapsed-icon="flat-checkround" data-expanded-icon="flat-cross" data-collapsed="false"  data-theme="a">
+				<div data-role="collapsible" data-collapsed-icon="carat-d" data-expanded-icon="info" data-collapsed="false"  data-theme="a">
 					<h3>メニュー</h3>
 					<?php
 					$path = "/home/vage/pear/PEAR/";
@@ -107,7 +107,7 @@
 					echo '</div>';
 					?>
 				</div>
-				<div data-role="collapsible" data-collapsed-icon="flat-checkround" data-expanded-icon="flat-cross" data-collapsed="false"  data-theme="a">
+				<div data-role="collapsible" data-collapsed-icon="carat-d" data-expanded-icon="grid" data-collapsed="false"  data-theme="a">
 
 					<h3>刀剣男士所有一覧</h3>
 					<div class="toukenleResultList">
