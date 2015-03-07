@@ -58,9 +58,30 @@
 					for (var i = 0; i < formValArray.length; i++) {
 						formVal[formValArray[i]] = '1';
 					}
+					// (ver1.1)5文字ずつ32進数で圧縮
+					// 末尾が5文字に満たない場合は0詰め
+					console.log('formaVal.length:' + (formVal.length-1));
+					for (var i = 0; i < (formVal.length - 1) % 5; i++){
+						formVal.push('0');
+					}
+					var form32Val = '';
+					var tempStr = '';
+					var tempInt = 0;
+					console.log('formaVal.length:' + (formVal.length-1));
+					for (var i = 1;	i < formVal.length; i=i+5){
+						tempStr = formVal[i] + formVal[i+1] +formVal[i+2] + formVal[i+3] + formVal[i+4];
+						console.log('tempStr:' + tempStr);
+						tempInt = parseInt(tempStr,2);
+						console.log('tempInt:' + tempInt);
+						form32Val = form32Val + tempInt.toString(32);
+						console.log('form32Val:' + form32Val);
+					}
 					formVal = formVal.join('');
 					$('#form1 #toukenselect').val(null);
-					$('#form1 #toukenList').val(formVal);
+					$('#form1 #toukenList').val(form32Val);
+					console.log('test::');
+					console.log(form32Val);
+					console.log('::endTest');
 				});
 			});
 		</script>
@@ -95,6 +116,7 @@
 					<h3>刀剣男士一覧</h3>
 					<form action="result.php" method="get" data-ajax="false" name="form1" id="form1">
 						<input type="hidden" id="toukenList" name="toukenList" value="">
+						<input type="hidden" id="ver" name="ver" value="1.1">
 						<button id="chkAll" data-icon="check" data-theme="a" data-inline="true" type="button">すべて選択</button>
 						<button id="chkReset" data-icon="delete" data-theme="a" data-inline="true" type="reset">選択リセット</button>
 						<input data-theme="b" data-inline="true" type="submit" value="作成">

@@ -60,7 +60,18 @@
 						$selectedToukenCount = 0;
 						$presetList = '';
 					} else {
-						$temp_toukenList = str_split($_GET['toukenList']);
+						// ver1.1(32進数圧縮)対応
+						if((float)$_GET['ver'] >= 1.1){
+							// 圧縮された文字列を01列に戻す
+							$temp_toukenList32 = str_split($_GET['toukenList']);
+							$temp_toukenList = array();
+							foreach($temp_toukenList32 as $base32){
+								$temp_str = str_pad(base_convert($base32, 32, 2),5,'0',STR_PAD_LEFT);
+								$temp_toukenList = array_merge($temp_toukenList,str_split($temp_str));
+							}
+						}else{
+							$temp_toukenList = str_split($_GET['toukenList']);							
+						}
 						$form_toukenList = array();
 						foreach ($temp_toukenList as $key => $val) {
 							if ($val === '1') {
